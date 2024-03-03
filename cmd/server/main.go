@@ -1,13 +1,14 @@
 package main
 
 import (
-	"fmt"
 	"log"
+
+	"github.com/roblesdotdev/proglog/internal/server"
 )
 
 func Run() error {
-	fmt.Println("Woking...")
-	return nil
+	srv := server.NewHTTPServer(":8080")
+	return srv.ListenAndServe()
 }
 
 func main() {
